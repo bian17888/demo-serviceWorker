@@ -1,4 +1,4 @@
-const version = 'v2';
+const version = 'v1';
 
 self.addEventListener('install', function (event) {
     console.log('SW %s Installed at', version, new Date().toLocaleTimeString());
