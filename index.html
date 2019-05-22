@@ -1,25 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="utf-8" />
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="The best car deals you can find!" />
     <title>Car Deals</title>
     <link rel="stylesheet" href="resources/css/index.css" />
-  </head>
+</head>
 
-  <body>
+<body>
     <article>
-      <p>home page</p>
-      <ul>
-        <li><a href="index2.html">sub page</a></li>
-      </ul>
-      <img
-        src="https://img.alicdn.com/tfs/TB1CEMxGkvoK1RjSZFDXXXY3pXa-940-180.jpg"
-        alt=""
-      />
+        <p>home page</p>
+        <ul>
+            <li><a href="index2.html">sub page</a></li>
+        </ul>
+        <img src="https://img.alicdn.com/tfs/TB1CEMxGkvoK1RjSZFDXXXY3pXa-940-180.jpg" alt="" />
     </article>
-    <script src="resources/js/app.js"></script>
-  </body>
+    <script type="text/javascript">
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('./sw.js', { scope: './' })
+                .then(r => console.log('SW Registered!'))
+                .catch(console.error)
+        }
+    </script>
+</body>
+
 </html>
