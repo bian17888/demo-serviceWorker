@@ -1,4 +1,4 @@
-const version = 'v1';
+const version = 'v2';
 
 self.addEventListener('install', function (event) {
     console.log('SW %s Installed at', version, new Date().toLocaleTimeString());
@@ -12,8 +12,6 @@ self.addEventListener('install', function (event) {
             'resources/js/index2.js',
             'resources/images/1.jpeg',
             'resources/images/2.jpeg',
-            'resources/images/3.jpeg',
-            'resources/images/4.jpg',
             // reomote
             'https://img.alicdn.com/tfs/TB1CEMxGkvoK1RjSZFDXXXY3pXa-940-180.jpg'
         ]);
@@ -44,17 +42,11 @@ self.addEventListener('fetch', function (event) {
             return caches.match(new Request('resources/offline.html'))
         }
 
-        const promiseRes = await caches.match(event.request);
-        if (promiseRes) {
-            return promiseRes;
-        }
-
         const res = await fetch(event.request);
         if (res) {
             const cache = await caches.open(version);
             await cache.put(event.request, res.clone());
         }
-
         return res;
     }
 
